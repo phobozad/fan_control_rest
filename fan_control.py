@@ -6,7 +6,7 @@ import RPi.GPIO as GPIO
 from bitstring import BitArray
 
 
-class fanController:
+class FanController:
     def __init__(self, dataPin):
         # Setup output pin using BCM numbering (e.g. Pin22 = physical pin 15)
         GPIO.setmode(GPIO.BCM)
@@ -116,7 +116,7 @@ if __name__ == "__main__":
     # BCM Pin 22 = Physical Pin 15
     dataPin = input("BCM GPIO Pin Number for Output: ")
     dataPin = int(dataPin)
-    control = fanController(dataPin)
+    control = FanController(dataPin)
 
     deviceAddress = input("Device Address [0-15]: ")
     deviceAddress = int(deviceAddress)
