@@ -97,6 +97,8 @@ class FanController:
             # Pause ~10ms between repeated packets.  sleep() is accurate enough for this
             time.sleep(10/1000)
 
+        return True
+
     def _command_lookup(self, command):
         try:
             return self.command_map[command]
@@ -131,7 +133,7 @@ if __name__ == "__main__":
             raise SystemExit 
 
         result = control.send_command(device_address, requested_command)
-        if result == False:
+        if not result:
             print("Invalid Command or Address")
 
 
