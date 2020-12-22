@@ -78,7 +78,7 @@ class FanController:
             return False
 
         # We will repeat each command multiple times to ensure reception
-        for packet in range(3):
+        for packet in range(5):
             # Send a one bit followed by a zero bit to signal start of packet
             self._send_bit(1)
             self._send_bit(0)
