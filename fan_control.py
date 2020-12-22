@@ -72,7 +72,10 @@ class FanController:
         if data == False:
             return False
 
+        # Invalid address provided
         address_bin = self.address_int_to_bin(address)
+        if address_bin == False:
+            return False
 
         # We will repeat each command multiple times to ensure reception
         for packet in range(3):
@@ -129,7 +132,7 @@ if __name__ == "__main__":
 
         result = control.send_command(device_address, requested_command)
         if result == False:
-            print("Invalid Command")
+            print("Invalid Command or Address")
 
 
 
